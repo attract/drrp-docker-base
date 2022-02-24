@@ -1,4 +1,4 @@
-FROM php:7.4.19-fpm
+FROM php:7.4.27-fpm
 
 MAINTAINER Amondar-SO
 
