@@ -11,7 +11,9 @@ RUN apt update \
     && docker-php-ext-configure gd --with-jpeg --with-freetype \
     && docker-php-ext-configure intl \
     && docker-php-ext-install -j$(nproc) json mbstring zip pdo pdo_mysql mysqli pdo_pgsql pdo_dblib iconv gd exif xml opcache intl bcmath \
-    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick
 
 
 EXPOSE 80 9000
